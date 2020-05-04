@@ -1,6 +1,8 @@
+const bodyParser = require('body-parser')
 const express = require('express')
 const logger = require('morgan')
 const mongoClient = require('mongoose')
+
 
 //setup connect mongodb by mongoose
 mongoClient.connect('mongodb://localhost/NodejsApiStarter',{
@@ -16,6 +18,7 @@ const userRoute = require('./routes/user')
 
 // Middleware
 app.use(logger('dev'))
+app.use(bodyParser.json())
 
 //Routes
 app.use('/users', userRoute)

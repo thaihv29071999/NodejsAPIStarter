@@ -12,7 +12,7 @@ const UserSchema = new Schema({
         type: String
     },
     decks: [{
-        type: Schema.Types.ObjectsId,
+        type: Schema.Types.ObjectId,
         ref: 'Deck'
     }]
 })
