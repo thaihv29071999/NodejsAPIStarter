@@ -1,5 +1,14 @@
 const express = require('express')
 const logger = require('morgan')
+const mongoClient = require('mongoose')
+
+//setup connect mongodb by mongoose
+mongoClient.connect('mongodb://localhost/NodejsApiStarter',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+    })
+    .then(() => console.log('Connect database  from mongodb successful'))
+    .catch((error) => console.error(`Connect database is failed with error which is ${error}`))
 
 const app = express()
 
